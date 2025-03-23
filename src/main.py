@@ -34,5 +34,8 @@ def list_agents() -> dict:
 add_mcp_server(
     app,
     mount_path="/mcp",  # Where to mount the MCP server
-    name="Test MCP Server"
+    name="Test MCP Server",
+    base_url="http://localhost:8001",
+    describe_all_responses=False,  # Only describe the success response in tool descriptions
+    describe_full_response_schema=False  # Only show LLM-friendly example response in tool descriptions, not the full json schema
 )
