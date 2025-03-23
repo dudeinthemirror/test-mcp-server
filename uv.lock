@@ -177,7 +177,7 @@ wheels = [
 
 [[package]]
 name = "fastapi-mcp"
-version = "0.1.3"
+version = "0.1.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "fastapi" },
@@ -192,9 +192,9 @@ dependencies = [
     { name = "typer" },
     { name = "uvicorn" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/79/75/aecd076b057aacee005c9eb1676b34a24167593ce37a51fa495f88b8ea40/fastapi_mcp-0.1.3.tar.gz", hash = "sha256:121faf25141e0bc50bbc97c74f4123852b3f13db16f5bf3536d9481e04f9747f", size = 57500 }
+sdist = { url = "https://files.pythonhosted.org/packages/95/2f/1c19550a4b8fc3e4a31ff30763966fc17f158477da4ac9d875c290d7adc0/fastapi_mcp-0.1.4.tar.gz", hash = "sha256:c6696e8f519af5f45247ad0b28f8643c504c610fe61bcf51f6b37a60c96972bd", size = 57584 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/c6/ba/d4d32aeb93ab4ab514af39247f6e668a20cb2fa46cb6c70ed6f66d974756/fastapi_mcp-0.1.3-py3-none-any.whl", hash = "sha256:345ced029aa8c4dee1d1e832e675e3e4777034fb3566a29129217ecf0333a59f", size = 12161 },
+    { url = "https://files.pythonhosted.org/packages/aa/ea/cebdff77f4b45f0a73fc88b25ec0e77c74bca4168492968368358d9ac9c1/fastapi_mcp-0.1.4-py3-none-any.whl", hash = "sha256:a3a97bc7b691c5235cf7a6454136530515cb6bd57c698fe69c5c4aeaefdd8323", size = 12136 },
 ]
 
 [[package]]
@@ -778,7 +778,7 @@ requires-dist = [
     { name = "email-validator", specifier = "==2.2.0" },
     { name = "fastapi", specifier = "==0.115.4" },
     { name = "fastapi-cli", specifier = "==0.0.5" },
-    { name = "fastapi-mcp", specifier = ">=0.1.3" },
+    { name = "fastapi-mcp", specifier = ">=0.1.4" },
     { name = "fastapi-pagination", specifier = "==0.12.32" },
     { name = "fastapi-sqlalchemy", specifier = "==0.2.1" },
     { name = "h11", specifier = "==0.14.0" },
