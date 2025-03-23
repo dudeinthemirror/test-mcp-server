@@ -6,12 +6,6 @@ from fastapi_mcp import add_mcp_server
 # Create a new FastAPI app instance
 app = FastAPI(description="Test MCP server")
 
-# Mount the MCP server
-add_mcp_server(
-    app,
-    mount_path="/mcp",  # Where to mount the MCP server
-    name="Test MCP Server",
-)
 
 
 # -------------------------------
@@ -36,3 +30,9 @@ def list_agents() -> dict:
         ]
     }
 
+# Mount the MCP server
+add_mcp_server(
+    app,
+    mount_path="/mcp",  # Where to mount the MCP server
+    name="Test MCP Server"
+)
