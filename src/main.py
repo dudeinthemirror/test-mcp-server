@@ -1,11 +1,9 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
 from fastapi_mcp import add_mcp_server
 
 
 # Create a new FastAPI app instance
 app = FastAPI(description="Test MCP server")
-
 
 
 # -------------------------------
@@ -30,12 +28,13 @@ def list_agents() -> dict:
         ]
     }
 
+
 # Mount the MCP server
 add_mcp_server(
     app,
     mount_path="/mcp",  # Where to mount the MCP server
     name="Test MCP Server",
-    base_url="http://localhost:8001",
+    base_url="http://localhost:8088",
     describe_all_responses=False,  # Only describe the success response in tool descriptions
-    describe_full_response_schema=False  # Only show LLM-friendly example response in tool descriptions, not the full json schema
+    describe_full_response_schema=False,  # Only show LLM-friendly example response in tool descriptions, not the full json schema
 )

@@ -1,5 +1,6 @@
 """
 Simple example of using FastAPI-MCP to add an MCP server to a FastAPI app.
+(from https://github.com/tadata-org/fastapi_mcp/tree/main/examples)
 """
 
 from fastapi import FastAPI, HTTPException, Query
@@ -111,7 +112,10 @@ async def search_items(
     if q:
         q = q.lower()
         results = [
-            item for item in results if q in item.name.lower() or (item.description and q in item.description.lower())
+            item
+            for item in results
+            if q in item.name.lower()
+            or (item.description and q in item.description.lower())
         ]
 
     # Filter by price range
@@ -129,11 +133,41 @@ async def search_items(
 
 # Add sample data
 sample_items = [
-    Item(id=1, name="Hammer", description="A tool for hammering nails", price=9.99, tags=["tool", "hardware"]),
-    Item(id=2, name="Screwdriver", description="A tool for driving screws", price=7.99, tags=["tool", "hardware"]),
-    Item(id=3, name="Wrench", description="A tool for tightening bolts", price=12.99, tags=["tool", "hardware"]),
-    Item(id=4, name="Saw", description="A tool for cutting wood", price=19.99, tags=["tool", "hardware", "cutting"]),
-    Item(id=5, name="Drill", description="A tool for drilling holes", price=49.99, tags=["tool", "hardware", "power"]),
+    Item(
+        id=1,
+        name="Hammer",
+        description="A tool for hammering nails",
+        price=9.99,
+        tags=["tool", "hardware"],
+    ),
+    Item(
+        id=2,
+        name="Screwdriver",
+        description="A tool for driving screws",
+        price=7.99,
+        tags=["tool", "hardware"],
+    ),
+    Item(
+        id=3,
+        name="Wrench",
+        description="A tool for tightening bolts",
+        price=12.99,
+        tags=["tool", "hardware"],
+    ),
+    Item(
+        id=4,
+        name="Saw",
+        description="A tool for cutting wood",
+        price=19.99,
+        tags=["tool", "hardware", "cutting"],
+    ),
+    Item(
+        id=5,
+        name="Drill",
+        description="A tool for drilling holes",
+        price=49.99,
+        tags=["tool", "hardware", "power"],
+    ),
 ]
 
 for item in sample_items:
@@ -146,7 +180,7 @@ mcp_server = add_mcp_server(
     mount_path="/mcp",
     name="Item API MCP",
     description="MCP server for the Item API",
-    base_url="http://localhost:8001",
+    base_url="http://localhost:8088",
     describe_all_responses=False,  # Only describe the success response in tool descriptions
     describe_full_response_schema=False,  # Only show LLM-friendly example response in tool descriptions, not the full json schema
 )
@@ -163,4 +197,4 @@ async def get_item_count() -> int:
 if __name__ == "__main__":
     import uvicorn
 
-    uvicorn.run(app, host="127.0.0.1", port=8001)
+    uvicorn.run(app, host="127.0.0.1", port=8088)

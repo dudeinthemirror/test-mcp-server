@@ -42,15 +42,19 @@ ruff check --fix ./src
 ### Running and debugging
 - start the server in dev mode
 ```shell
-uv run fastapi dev src/main.py --host 127.0.0.1 --port 8001
+uv run fastapi dev src/main.py --host 127.0.0.1 --port 8088
+```
+OR,
+```shell
+uv run fastapi dev src/simple_integration.py --host 127.0.0.1 --port 8088
 ```
 
 - start the MCP inspector
 ```shell
-npx @modelcontextprotocol/inspector http://127.0.0.1:8001/mcp
+npx @modelcontextprotocol/inspector http://127.0.0.1:8088/mcp
 ```
 - open the inspector in the browser `http://127.0.0.1:5173`
 - in the left panel:
   - Transport Type: SSE
-  - URL: `http://127.0.0.1:8001/mcp`
+  - URL: `http://127.0.0.1:8088/mcp`
   - click on `Connect`
